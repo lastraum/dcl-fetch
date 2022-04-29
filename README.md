@@ -20,6 +20,15 @@ To use any of the helpers provided by this library:
 
 ## Usage
 
+### Response
+```ts
+export type dclFetchResponse = {
+  valid: boolean, //if the validation was successful or not
+  msg: string, //validation success or error message
+  data:any //if your custom server returns any data from the endpoint passed
+}
+```
+
 ### User Validation Only
 
 ```ts
