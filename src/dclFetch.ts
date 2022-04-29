@@ -9,7 +9,6 @@ export type dclFetchData ={
   link?: string,
   method?: dclFetchMethod,
   body?: any,
-  passthru?:boolean,
   auth?: string
 }
 
@@ -24,9 +23,8 @@ export async function dclFetch(fetchData?:dclFetchData) {
   let res:dclFetchResponse = {valid: false, msg:"", data:{}}
   let valid:boolean
   let msg: string
-  let data
 
-    if(fetchData && fetchData.passthru){
+    if(fetchData){
       if(!fetchData!.auth){
         valid = false
         msg = "Incorrect or missing auth token and data object"
