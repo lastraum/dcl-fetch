@@ -70,6 +70,8 @@ executeTask(async()=>{
 })
 ```
 
+#### For server validation, please reach out to Lastraum#0153 on the process for obtaining an auth key
+
 ## Copyright info
 
 This scene is protected with a standard Apache 2 licence. See the terms and conditions in the [LICENSE](/LICENSE) file.
