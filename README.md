@@ -1,15 +1,3 @@
-## SDK Library
-
-This project has the basics to start building your own library for using in Decentraland scenes.
-
-The libraries in the [Awesome Repository](https://github.com/decentraland-scenes/Awesome-Repository#Libraries) are available for all to use. We encourage you to create and share your own as well, we'd love to see the community grow and start sharing more reusable solutions to common problems through libraries!
-
-## Publish
-
-See [Create Libraries]() for tips on how to design and develop your library, and for simple instructions for publishing it to NPM.
-
-Below is a template to help you craft documentation for your library, so others know how to use it.
-
 # MyAmazingLibrary Documentation
 
 myAmazingLibrary includes helpful solutions for `< insert use case >` in a Decentraland scene.
