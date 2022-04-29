@@ -1,4 +1,4 @@
-# MyAmazingLibrary Documentation
+# DCL Validator
 
 myAmazingLibrary includes helpful solutions for `< insert use case >` in a Decentraland scene.
 
