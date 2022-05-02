@@ -15,7 +15,7 @@ To use any of the helpers provided by this library:
 2. Add this line at the start of your game.ts file, or any other TypeScript files that require it:
 
    ```ts
-   import {dclFetch, dclFetchMethod, dclFetchResponse} from 'dcl-fetch''
+   import {dclFetch, dclFetchMethod, dclFetchResponse} from 'dcl-fetch'
    ```
 
 ## Usage
