@@ -1,15 +1,15 @@
 import { signedFetch } from "@decentraland/SignedFetch"
 
 export enum dclFetchMethod {
-  GET,
-  POST
+  GET, POST
 }
 
 export type dclFetchData ={
   link?: string,
-  method?: dclFetchMethod,
+  method?:number,
   body?: any,
-  auth?: string
+  auth?: string,
+  params?: string
 }
 
 export type dclFetchResponse = {
@@ -33,13 +33,38 @@ export async function dclFetch(fetchData?:dclFetchData) {
     }
 
   try{
-    let response = await signedFetch('https://lkdcl.co/dcl/validator/validate',{
+    let response:any
+
+    if(!fetchData.method){
+      response = await signedFetch('https://lkdcl.co/dcl/validator/validate',{
+        method: 'GET',
+        headers: {
+          "Content-Type": "application/json"
+        },
+      })
+    }
+    else{
+      switch(fetchData.method){
+        case 0:
+          response = await signedFetch('https://lkdcl.co/dcl/validator/validate' + fetchData.params ? fetchData.params : "",{
+            method: 'GET',
+            headers: {
+              "Content-Type": "application/json"
+            },
+          })
+        break;
+
+        case 1:
+          response = await signedFetch('https://lkdcl.co/dcl/validator/validate',{
             method: 'POST',
             headers: {
               "Content-Type": "application/json"
             },
             body: JSON.stringify(fetchData)
           })
+          break;
+      }
+    }
     let json
     if (response.text) {
       json = await JSON.parse(response.text)
