@@ -1,12 +1,12 @@
 import { signedFetch } from "@decentraland/SignedFetch"
 
 export enum dclFetchMethod {
-  //GET, POST
+  GET, POST
 }
 
 export type dclFetchData ={
   link?: string,
-  method?: dclFetchMethod,
+  method?: dclFetchData,
   body?: any,
   auth?: string,
   params?: string
