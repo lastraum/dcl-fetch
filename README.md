@@ -34,7 +34,13 @@ export type dclFetchResponse = {
 ```ts
 executeTask(async()=>{
   let res:dclFetchResponse = await dclFetch()
-  log('res is', res)
+  log('response is', res)
+  if(res.valid){
+    log('Valid DCL user')
+  }
+  else{
+    log('Error', res.msg)
+  }
 })
 ```
 
