@@ -1,3 +1,4 @@
+import { isPreviewMode } from "@decentraland/EnvironmentAPI"
 import { signedFetch } from "@decentraland/SignedFetch"
 
 export enum dclFetchMethod {
@@ -5,10 +6,10 @@ export enum dclFetchMethod {
 }
 
 export type dclFetchData ={
-  link?: string,
-  method?: dclFetchData,
-  body?: any,
-  auth?: string,
+  link?: string
+  method?: dclFetchData
+  body?: any
+  auth?: string
   params?: string
 }
 
@@ -21,13 +22,18 @@ export type dclFetchResponse = {
 export async function dclFetch(fetchData?:dclFetchData) {
 
   let res:dclFetchResponse = {valid: false, msg:"", data:{}}
-  let valid:boolean
-  let msg: string
+
+  if(await isPreviewMode()){
+    res.valid = true
+    res.msg = "Preview Mode: player in position"
+    return res
+  }
+  else{
 
     if(fetchData){
       if(!fetchData!.auth){
-        valid = false
-        msg = "Incorrect or missing auth token and data object"
+        res.valid = false
+        res.msg = "Incorrect or missing auth token and data object"
         return res
       }
     }
@@ -70,4 +76,6 @@ export async function dclFetch(fetchData?:dclFetchData) {
       res.msg = "e"
       return res
   }
+  }
+
 }
