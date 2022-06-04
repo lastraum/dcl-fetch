@@ -39,6 +39,7 @@ executeTask(async()=>{
 ```
 
 ### User Validation and passing a get request to your custom server
+**please reach out to info@lastslice.org to setup your custom server code**
 
 ```ts
 executeTask(async()=>{
@@ -52,6 +53,7 @@ executeTask(async()=>{
 ```
 
 ### User Validation and passing a get request to your custom server with query parameters
+**please reach out to info@lastslice.org to setup your custom server code**
 
 ```ts
 executeTask(async()=>{
@@ -66,6 +68,7 @@ executeTask(async()=>{
 ```
 
 ### User Validation and passing a post request to your custom server with body parameters
+**please reach out to info@lastslice.org to setup your custom server code**
 
 ```ts
 executeTask(async()=>{
