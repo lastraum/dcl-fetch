@@ -7,7 +7,7 @@ export enum dclFetchMethod {
 
 export type dclFetchData ={
   link?: string
-  method?: dclFetchData
+  method?: dclFetchMethod
   body?: any
   auth?: string
   params?: string
